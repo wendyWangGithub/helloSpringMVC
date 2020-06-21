@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的
+例如namespace="com.springdemo.mapping.userMapper"就是com.springdemo.mapping(包名)+userMapper(userMapper.xml文件去除后缀)
+ -->
+<mapper namespace="com.springdemo.mapper.ScoresMapper">
+    <resultMap id="ScoresMap" type="com.springdemo.model.Scores">
+        <result property="id" column="id" javaType="java.lang.Integer"></result>
+        <result property="name" column="name" javaType="java.lang.String"></result>
+        <result property="score" column="score" javaType="java.lang.Integer"></result>
+	</resultMap>
+ 
+    <!-- 根据_key查询得到一个user对象-->
+    <select id="getScores" parameterType="java.lang.Integer" resultType="com.springdemo.model.Scores"> <!-- 创建对应user实体类的位置 -->
+        select * from Scores where id=#{id}
+    </select> 
+    
+    <select id="selectScores" resultMap="ScoresMap">
+    	select * from Scores;
+    </select>
+    
+    <delete id="deleteScores" parameterType="int">
+    	delete from Scores where id=#{id}
+    </delete>
+    
+    <update id="updateScores">
+    	update Scores set name=#{name},score=#{password} where id=#{id}
+    </update>
+    
+    <insert id="insertScores" useGeneratedKeys="true" keyProperty="id" parameterType="com.springdemo.model.Scores">
+    	insert into Scores(name,score) values(#{name},#{score})
+    </insert>
+    
+    <select id="getScoreByUserName" parameterType="java.lang.String" resultType="com.springdemo.model.Scores">
+        select * from Scores where name = #{name, jdbcType=VARCHAR}
+    </select> 
+   
+</mapper>
