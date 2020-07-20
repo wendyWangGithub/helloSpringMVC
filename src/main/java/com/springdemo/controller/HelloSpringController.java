@@ -33,7 +33,7 @@ public class HelloSpringController {
     }
     
     /**
-     * get请求，请求报文，url：http://localhost:8080/helloSpringMVC/getUserById?id=4
+     * get请求，请求报文，url：http://localhost:8080/helloSpringMVC_war_exploded/getUserById?id=4
      * @param request
      * @param response
      * @return
@@ -49,6 +49,7 @@ public class HelloSpringController {
      * post请求，需要有@RequestBody
      * 请求报文：Post请求url：http://localhost:8080/helloSpringMVC/addUser，body：{"name":"a","password":"abc"}
      * @param user
+	 * @RequestBody表示请求为json格式。
      * @return
      */
     @ResponseBody

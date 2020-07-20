@@ -122,7 +122,7 @@ public class Test {
 	for (User _user : _userList) {
 		Scores score = session.selectOne("com.springdemo.mapper.ScoresMapper.getScoreByUserName", _user.getName());
 		if(score != null && score.getName() != null) {
-			System.out.println("分步查询用户和成绩结果为：" + score);
+			System.out.println("分步查询用户和成绩结果为：" + score + _user.getPassword());
 		} 
 	}
 	//判断是否为没有设置mybatis编码导致的程序错误

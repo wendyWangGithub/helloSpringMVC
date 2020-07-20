@@ -46,14 +46,14 @@ public class SubmitOrderService {
 	public String submitSync(String productCode, int number) {
 		long start = System.currentTimeMillis();
 		try {
-			doCheckAync(productCode, number);
+			doCheckSync(productCode, number);
 			return orderService.add(productCode, number);
 		} finally {
 			System.out.println("耗时 ： " + (System.currentTimeMillis() - start) + "ms");
 		}
 	}
 
-	private void doCheckAync(String productCode, int number) {
+	private void doCheckSync(String productCode, int number) {
 		if (!productService.checkProduct(productCode)) {
 			throw new RuntimeException("产品已下架！");
 		}
