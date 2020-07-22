@@ -55,7 +55,7 @@ pageEncoding="UTF-8"%>
 				3.2、需要Spring和Mybatis关联，文件：spring-mybatis.xml。<br>&nbsp;&nbsp;&nbsp;&nbsp;
 				3.3、pom文件需要的artifactId为：mybatis-spring、commons-dbcp、spring-jdbc、fastjson<br>&nbsp;&nbsp;&nbsp;&nbsp;
 				3.4、说明：此功能不需要httpclient的jar包，httpclient是模拟浏览器发送请求的，<br>&nbsp;&nbsp;&nbsp;&nbsp;
-				调用此httpPost或者httpGet请求时则需要用到httpclient了。此功能为DLJ代写<br>&nbsp;&nbsp;&nbsp;&nbsp;
+				调用此httpPost或者httpGet请求时则需要用到httpclient了。DLJ<br>&nbsp;&nbsp;&nbsp;&nbsp;
 				涉及文件：HelloSpringController.java,UserService.java,UserMapper.java中的方法getUser和insertUser对应UserMapper.xml中id为gerUser和insertUser<br>&nbsp;&nbsp;&nbsp;&nbsp;
 				页面中添加User：涉及文件HelloSpringController.java,index,jsp,BaseResult.java,todo<br>&nbsp;&nbsp;&nbsp;&nbsp;
 				3.6、index.jsp中使用json，get及post，ajax方式提交表单（用户数据）详解：https://www.iqiyi.com/w_19rr0ngp89.html，<br>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -68,7 +68,7 @@ pageEncoding="UTF-8"%>
 				同步请求：http://localhost:8080/helloSpringMVC_war_exploded/order/submitAsync?productCode=123&number=4<br>&nbsp;&nbsp;&nbsp;&nbsp;
 				入口-SubmitOrderController.java,模拟数据-StockService.java,ProductService.java,<br>&nbsp;&nbsp;&nbsp;&nbsp;
 				模拟延迟接口，为了方便看出来同步和异步哪个请求时间快。每个请求都做了两个验证，checkProduct，checkStock所以走的代码也是一样的<br>&nbsp;&nbsp;&nbsp;&nbsp;
-				多线程-SubmitOrderService.java，开启线程执行executorService.submit(new Callable<Boolean>()<br>&nbsp;&nbsp;&nbsp;&nbsp;
+				多线程-SubmitOrderService.java，开启线程执行executorService.submit(new Callable)<br>&nbsp;&nbsp;&nbsp;&nbsp;
 					异步没看到有多个线程，同步没看到发送请求（因为这只是一个接口，不需要发送请求，发送请求是httpclient做的事，异步也只是管理的线程问题）<br>&nbsp;&nbsp;&nbsp;&nbsp;
 					4.2、DATE：20200705
 			</h2>
